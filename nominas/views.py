@@ -99,5 +99,5 @@ def Eliminar(request,id):
     empleado.delete()
     return HttpResponseRedirect("/listado/")
 
-#hola 
-#hola lola
+def login(request):
+    return render(request,"login.jinja")
