@@ -4,11 +4,11 @@
 {% endblock titulo %}
 
 {% block body %}
-<div class="container">
+<div class="container mt-5 text-center">
     <form action="{% url 'Crear_Empleado' %}" method="post">
         {% csrf_token %}
         {{ formulario }}
-        <button class="btn btn-dark" type="submit">Crear Empleado</button>
+        <button class="btn btn-dark mt-4" type="submit">Crear Empleado</button>
     </form>
 
 </div>

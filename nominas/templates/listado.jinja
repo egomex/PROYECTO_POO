@@ -9,8 +9,8 @@
         <h1>Listado de empleados</h1>
     </div>
     <div class="row">
-        <table>
-            <thead>
+        <table class="table bg-warning text-dark">
+            <thead class="table-dark">
                 <tr>
                     <th>Nombre</th>
                     <th>Cedula</th>
@@ -35,8 +35,8 @@
                     <td>{{ empleado.departamento.descripcion }}</td>
                     <td>{{ empleado.tipo_contrato.descripcion }}</td>
                     <td class="text-center">
-                    <a href="{% url 'Actualizar_empleado' empleado.id %}" class="btn">Actualizar</a>
-                    <a href="{% url 'Eliminar' empleado.id %}" class="btn">Eliminar</a>
+                    <a href="{% url 'Actualizar_empleado' empleado.id %}" class="btn btn-primary col">Actualizar</a>
+                    <a href="{% url 'Eliminar' empleado.id %}" class="btn btn-danger col">Eliminar</a>
                     </td>
                 </tr>
                 {% endfor %}
@@ -75,10 +75,7 @@
                     <td>{{ nomina.tot_ing }}</td>
                     <td>{{ nomina.tot_des }}</td>
                     <td>{{ nomina.neto }}</td>
-                    <td>
-                    <a href="" class="btn"></a>
-                    <a href="" class="btn btn-red"></a>
-                    </td>
+                    
                 </tr>
             {% endfor %}
         </tbody>
