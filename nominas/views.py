@@ -98,3 +98,5 @@ def Eliminar(request,id):
     empleado = Empleado.objects.get(pk=id)
     empleado.delete()
     return HttpResponseRedirect("/listado/")
+
+#hola 
