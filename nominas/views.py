@@ -100,3 +100,4 @@ def Eliminar(request,id):
     return HttpResponseRedirect("/listado/")
 
 #hola 
+#hola lola
