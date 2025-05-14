@@ -1,0 +1,89 @@
+{% extends "index.jinja" %}
+{% block titulo %}
+<title>Listado de empleados</title>
+{% endblock titulo %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <h1>Listado de empleados</h1>
+    </div>
+    <div class="row">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Cedula</th>
+                    <th>Direccion</th>
+                    <th>Sexo</th>
+                    <th>Sueldo</th>
+                    <th>Cargo</th>
+                    <th>Departamento</th>
+                    <th>Contrato</th>
+                    <th class="text-center"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for empleado in empleados %}
+                <tr>
+                    <td>{{ empleado.nombre }}</td>
+                    <td>{{ empleado.cedula }}</td>
+                    <td>{{ empleado.direccion }}</td>
+                    <td>{{ empleado.sexo }}</td>
+                    <td>{{ empleado.sueldo }}</td>
+                    <td>{{ empleado.cargo.descripcion }}</td>
+                    <td>{{ empleado.departamento.descripcion }}</td>
+                    <td>{{ empleado.tipo_contrato.descripcion }}</td>
+                    <td class="text-center">
+                    <a href="{% url 'Actualizar_empleado' empleado.id %}" class="btn">Actualizar</a>
+                    <a href="{% url 'Eliminar' empleado.id %}" class="btn">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+    <div class="row">
+    <h1>Nominas generandas</h1>
+    </div>
+
+    <div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Empleado</th>
+                <th>Aniomes</th>
+                <th>Sueldo</th>
+                <th>Horas Extras</th>
+                <th>Bono</th>
+                <th>Iess</th>
+                <th>Total</th>
+                <th>Total descuento</th>
+                <th>Neto</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nomina in nominas %}
+                <tr>
+                    <td>{{ nomina.empleado.nombre }}</td>
+                    <td>{{ nomina.aniomes }}</td>
+                    <td>{{ nomina.sueldo }}</td>
+                    <td>{{ nomina.horas_extras }}</td>
+                    <td>{{ nomina.bono }}</td>
+                    <td>{{ nomina.iess }}</td>
+                    <td>{{ nomina.tot_ing }}</td>
+                    <td>{{ nomina.tot_des }}</td>
+                    <td>{{ nomina.neto }}</td>
+                    <td>
+                    <a href="" class="btn"></a>
+                    <a href="" class="btn btn-red"></a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+</div>
+{% endblock body %}

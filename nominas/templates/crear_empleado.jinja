@@ -1,0 +1,15 @@
+{% extends "index.jinja" %}
+{% block titulo %}
+<title>Crear Empleado</title>
+{% endblock titulo %}
+
+{% block body %}
+<div class="container">
+    <form action="{% url 'Crear_Empleado' %}" method="post">
+        {% csrf_token %}
+        {{ formulario }}
+        <button class="btn btn-dark" type="submit">Crear Empleado</button>
+    </form>
+
+</div>
+{% endblock body %}
